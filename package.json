@@ -2,15 +2,23 @@
   "name": "@singrum/workspace",
   "version": "1.0.0",
   "description": "Workspace interface with folders and tabs",
+  "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/index.tsx --format cjs,esm --dts --minify --clean",
-    "dev": "tsup src/index.ts src/index.tsx --format cjs,esm --watch --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --watch --dts",
     "lint": "tsc"
   },
   "keywords": [
@@ -23,7 +31,6 @@
   ],
   "author": "singrum",
   "license": "MIT",
-  "type": "module",
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18",

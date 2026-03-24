@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { useStore } from "zustand";
-import { WorkspaceRepository } from "./workspace";
+import { WorkspaceRepository } from "./types";
 import { createWorkspaceStore, WorkspaceStore } from "./workspace-store";
 
 export type WorkspaceStoreApi = ReturnType<typeof createWorkspaceStore>;
